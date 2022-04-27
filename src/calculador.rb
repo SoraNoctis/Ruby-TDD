@@ -3,7 +3,7 @@ class Calculadora
         val1 + val2
     end
 
-    def subtacao(val1, val2)
+    def subtracao(val1, val2)
         val1 - val2
     end
 
@@ -11,8 +11,16 @@ class Calculadora
         val1 * val2
     end
 
-    def divsao(val1, val2)
+    def divisao(val1, val2)
         val1 / val2
+    end
+
+    def elev(val1, val2)
+        val1 ** val2
+    end
+
+    def raiz(val1)
+        Math.sqrt(val1)
     end
 
 end
