@@ -1,15 +1,17 @@
 require 'rspec'
-
-def imc(peso, altura)
-    imc_res = peso / (altura * altura)
-    return imc_res.round(1)
-end
-
+require_relative '../src/imc.rb'
 
 describe ("imc") do
-    it('Deve calcular peso e altura') do
+
+    it('Não vai calcular devido altura = 0') do
         peso = 60
-        altura = 1.7
-        expect(imc(peso, altura)).to eq 20.8
+        altura = 0
+        expect(imc(peso, altura)).to include 'Não contem altura para calcular o IMC.'
+    end
+
+    it('Não deve calcular devido peso = 0') do
+        peso = 0
+        altura = 1.70
+        expect(imc(peso, altura)).to include 'Não é possivel calcular seu peso para o IMC.'
     end
 end
