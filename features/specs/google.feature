@@ -2,7 +2,7 @@
 
 Funcionalidade: Busca no Google
 
-Cenário: Carregar a pagina do Home do Google
+Cenário: Pesquisa no Google
     Dado Estar na Página Principal do Google
-    Então Digitar uma informação
-
+    Quando Pesquisar por "Compass UOL"
+    Então Validar resposta

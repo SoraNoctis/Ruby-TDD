@@ -1,9 +1,13 @@
 Dado ("Estar na Página Principal do Google") do
-    visit("https://www.google.com")
-end #me
+    @google_page = GooglePage.new
+    @google_page.load
+end
 
-Dado("Digitar uma informação") do
-    find('[name="q"]').set("Compass UOL")
+Quando("Pesquisar por {string}") do |string|
+    @google_page.search(string)
     sleep(5)
 end
 
+Então('Validar resposta') do
+    pending
+  end
